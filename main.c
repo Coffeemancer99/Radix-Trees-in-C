@@ -16,11 +16,12 @@ struct node* initNode(char* word){
     return(currNode);
 }
 
-void freeNode(struct node currNode){
+void freeNode(struct node* currNode){
+  printf("%s", currNode->word);
   free(currNode->word); //Free the word
   free(currNode->children); //Free the 26 pointers
   free(currNode); //Free the node itself
-  return 0;
+
 }
 
 void insert(struct node currNode){
@@ -32,7 +33,7 @@ int main() {
     //char* tester = (char *)malloc(sizeof(char)*35);
     struct node *tree=initNode("hey");
     printf("%s",tree->word);
-    currN
+    freeNode(tree);
     //char* h=initNode(*tree, "This is the root");
     //printf("%s",h);
     //printf("%s", h);
